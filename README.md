@@ -2,6 +2,32 @@
 
 This build is designed around the complete SIH 26159 deliverables rather than a static mockup.
 
+## Application
+
+Live application: [Mail Vault](https://sih26159-yq72.vercel.app/)
+
+Source repository: [github.com/Ozair-aly/sih26159](https://github.com/Ozair-aly/sih26159)
+
+## Application workflow
+
+```mermaid
+flowchart TD
+	A[Analyst opens Mail Vault] --> B[Upload PCAP or PCAPNG]
+	B --> C[Frontend sends capture to POST /api/analyze]
+	C --> D[FastAPI analysis service]
+	D --> E[Scapy reads packets]
+	E --> F[Group TCP packets into bidirectional streams]
+	F --> G[Identify SMTP IMAP and POP3 traffic]
+	G --> H[Reconstruct payloads and inspect STARTTLS]
+	H --> I[Parse TLS versions cipher suites and key exchange]
+	I --> J[Extract and inspect X.509 certificates]
+	J --> K[Calculate posture score and prioritized findings]
+	K --> L[Run anomaly prioritization when enough sessions exist]
+	L --> M[Return JSON analysis to dashboard]
+	M --> N[Review overview sessions crypto AI and certificates]
+	N --> O[Export JSON HTML or PDF report]
+```
+
 ## Included
 
 1. Passive PCAP upload and analysis.
