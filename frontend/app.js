@@ -150,7 +150,14 @@ function render(d) {
 }
 
 async function load() {
-  render(emptyResult());
+  try {
+    const r = await fetch(API + "/demo");
+    if (!r.ok) throw new Error("Demo data unavailable");
+    render(await r.json());
+  } catch (err) {
+    render(emptyResult());
+    toast("Demo data unavailable");
+  }
 }
 
 load();
