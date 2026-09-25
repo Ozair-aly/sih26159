@@ -1,0 +1,38 @@
+@media (min-width: 641px) and (max-width: 900px) {
+  aside { width: 82px; padding: 20px 10px; }
+  .logo { justify-content: center; padding: 0 0 24px; }
+  .logo > div, .side-status { display: none; }
+  nav button { font-size: 0; text-align: center; padding: 13px 8px; }
+  main { margin-left: 82px; width: calc(100% - 82px); padding: 24px 22px 48px; }
+  .hero { gap: 28px; }
+  .score { display: block; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid2 { grid-template-columns: 1fr; }
+  .grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .table { overflow-x: auto; }
+  table { min-width: 760px; }
+}
+
+@media (max-width: 640px) {
+  .shell { display: block; }
+  aside { position: static; width: 100%; padding: 12px 14px; }
+  .logo { justify-content: flex-start; padding: 0; }
+  .logo > div { display: block; }
+  nav { display: flex; gap: 4px; margin-top: 12px; overflow-x: auto; padding-bottom: 2px; }
+  nav button { flex: 0 0 auto; width: auto; font-size: 12px; text-align: left; padding: 9px 11px; margin: 0; white-space: nowrap; }
+  main { margin-left: 0; width: 100%; padding: 20px 14px 36px; }
+  header { height: auto; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  h1 { font-size: 22px; }
+  .upload { padding: 10px 11px; font-size: 11px; white-space: nowrap; }
+  .hero { padding: 24px 20px; display: block; }
+  .hero h2 { font-size: 26px; }
+  .score { margin-top: 24px; display: flex; align-items: center; gap: 12px; text-align: left; }
+  .score > div { width: 104px; height: 104px; border-width: 6px; }
+  .score b { font-size: 32px; }
+  .score strong { margin: 0; }
+  .score span { display: none; }
+  .cards, .grid3 { grid-template-columns: 1fr; }
+  .panel { padding: 18px; }
+  .intro h2 { font-size: 23px; }
+  .file b { display: block; margin: 7px 0 0; overflow-wrap: anywhere; }
+}
